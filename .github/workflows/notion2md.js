@@ -48,7 +48,7 @@ async function main() {
           {
             property: 'date',
             date: {
-              before: today
+              on_or_before: today
             }
           }
         ],
