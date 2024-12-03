@@ -1,10 +1,10 @@
 export const SITE = {
-    "title": "每日分享",
+    "title": "周刊",
     "author": "boan",
     "description": "分享每周的阅读内容",
     "cardDesc": "分享每周的阅读内容",
     "keywords": "weekly",
-    "icon": "https://picture-uploader.oss-cn-guangzhou.aliyuncs.com/md/weekly.ico",
+    "icon": "https://picture-uploader.oss-cn-guangzhou.aliyuncs.com/md/weekly.png",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg",
     "pic": "",
     "homePage": "https://post.daychat.cn",
@@ -17,3 +17,4 @@ export const SITE = {
     // "cmtCss": "https://unpkg.com/@waline/client@2.15.8/dist/waline.css",
     "pv": false
 }
+
