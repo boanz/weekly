@@ -8,7 +8,7 @@ export const SITE = {
     "favicon": "https://github.githubassets.com/favicons/favicon.svg",
     "pic": "",
     "homePage": "https://post.daychat.cn",
-    "blogPage": "https://blog.daychat.cn",
+    // "blogPage": "https://blog.daychat.cn",
     // "twitterId": "thinkerchan",
     // "githubId": "thinkerchan",
     // "repo": "thinkerchan/weekly",
