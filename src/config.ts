@@ -12,9 +12,9 @@ export const SITE = {
     // "twitterId": "thinkerchan",
     "githubId": "boanz",
     "repo": "boanz/weekly",
-    // "cmtURL": "https://cmt.testdog.cn",
-    // "cmtJs": "https://unpkg.com/@waline/client@2.15.8/dist/waline.js",
-    // "cmtCss": "https://unpkg.com/@waline/client@2.15.8/dist/waline.css",
+    "cmtURL": "https://waline.daychat.cn/",
+    "cmtJs": "https://unpkg.com/@waline/client@2.15.8/dist/waline.js",
+    "cmtCss": "https://unpkg.com/@waline/client@2.15.8/dist/waline.css",
     "pv": false
 }
 
