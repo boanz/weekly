@@ -11,7 +11,7 @@ export const SITE = {
     // "blogPage": "https://blog.daychat.cn",
     // "twitterId": "thinkerchan",
     "githubId": "boanz",
-    // "repo": "thinkerchan/weekly",
+    "repo": "boanz/weekly",
     // "cmtURL": "https://cmt.testdog.cn",
     // "cmtJs": "https://unpkg.com/@waline/client@2.15.8/dist/waline.js",
     // "cmtCss": "https://unpkg.com/@waline/client@2.15.8/dist/waline.css",
