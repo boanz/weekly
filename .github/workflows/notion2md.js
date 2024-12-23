@@ -85,7 +85,7 @@ async function main() {
             const title = props.title?.title[0].plain_text
             const link = props.link.url
             // const content = props.desc?.rich_text[0]?.plain_text || ''
-            const content = (props.desc?.rich_text.map(item => item.plain_text).join('') || '') + (link ? `[Link](${link})` : '')
+            const content = (props.desc?.rich_text.map(item => item.plain_text).join('') || '') + (link ? `${link}` : '')
             const img = props.img?.files[0]?.file?.url || props.img?.files[0]?.external?.url || ''
             const imgDesc = props.imgDesc?.rich_text[0]?.plain_text || ''
 
