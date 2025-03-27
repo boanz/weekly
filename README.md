@@ -1,4 +1,4 @@
-# 🛠️ 开发教程
+# 🛠️ 使用教程
 > 基于 [thinkerchan/weekly](https://github.com/thinkerchan/weekly) 项目修改的个人周刊系统
 
 ## ✨ 功能特点
@@ -8,6 +8,11 @@
 - **📊 访问统计**：集成 busuanzi 访问量统计
 - 🔍 **站内搜索**：支持全文内容检索
 - 🤖 **自动更新**：通过 [notion2md](https://github.com/thinkerchan/notion2md) 实现 Notion 内容自动同步
+
+## 📌 应用场景
+- **手动管理**：直接编辑 `src/pages/posts` 下的 Markdown 文件
+- **自动同步**：通过 Notion 数据库管理内容，自动生成 Markdown
+
 
 ## 🚀 快速开始
 
@@ -99,22 +104,24 @@ desc: "文章摘要"    # 可选
 ### 5. Notion 同步（可选）
 #### 初始配置
 - 在 GitHub 仓库设置 Secrets：
-   - `NOTION_TOKEN`
-   - `NOTION_DATABASE_ID`
-- 测试同步功能：
-```bash
-npm run fetch  # 生成 posts/*.md 文件
-```
+    - `NOTION_TOKEN` - Notion API 访问令牌
+    - `NOTION_DATABASE_ID` - Notion 数据库 ID
+    - `OSS_ACCESS_KEY_ID` - 阿里云 OSS 访问密钥 ID
+    - `OSS_ACCESS_KEY_SECRET` - 阿里云 OSS 访问密钥
+    - `OSS_BUCKET` - 阿里云 OSS 存储桶名称
+    - `OSS_REGION` - 阿里云 OSS 存储区域
+    - `OSS_DOMAIN` - 阿里云 OSS 访问域名
+- 测试同步功能
+    ```bash
+    npm run fetch  # 生成 posts/*.md 文件
+    ```
 
 #### 高级配置
 - 同步脚本：`.github/workflows/notion2md.js`
 - 定时任务：`.github/workflows/task.yml`
 - 参考文档：[notion2md 使用指南](https://github.com/thinkerchan/notion2md)
 
-## 📌 使用场景
-- **手动管理**：直接编辑 `src/pages/posts` 下的 Markdown 文件
-- **自动同步**：通过 Notion 数据库管理内容，自动生成 Markdown
 
 ## 致谢
-- 原始项目：[tw93/weekly](https://github.com/tw93/weekly)
-- 基础框架：[thinkerchan/weekly](https://github.com/thinkerchan/weekly)
+- [tw93/weekly](https://github.com/tw93/weekly)
+- [thinkerchan/weekly](https://github.com/thinkerchan/weekly)
