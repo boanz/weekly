@@ -78,32 +78,33 @@ desc: "文章摘要"    # 可选
 ````
 
 #### 格式规范
-1. **头图设置**
+- **头图设置**
    - 首行建议放置头图（自动识别）
    - 或通过 `pic` 字段指定封面图
    - 未设置时使用默认图片
 
-2. **内容结构**
+- **内容结构**
    - 头图与正文间空一行
    - 可通过 `<small>` 标签添加图片描述
    - 或通过 `desc` 字段设置文章摘要
 
-3. **命名规范**
+- **命名规范**
    - 文件名建议采用 `序号-标题-日期.md` 格式
    - 示例：`03-前端动态-20240325.md`
 
 ### 4. 部署指南
 - 访问 [Vercel 控制台](https://vercel.com/new)
 - 选择 GitHub 仓库导入
-- 配置部署参数：
+- 配置部署参数
    - **Framework Preset**: Astro
    - **Build Command**: `npm run build`
    - **Output Directory**: dist
 - 点击 Deploy 完成部署
 
 ### 5. Notion 同步（可选）
+
 #### 初始配置
-- 在 GitHub 仓库设置 Secrets：
+- 在 GitHub 仓库设置 Secrets
     - `NOTION_TOKEN` - Notion API 访问令牌
     - `NOTION_DATABASE_ID` - Notion 数据库 ID
     - `OSS_ACCESS_KEY_ID` - 阿里云 OSS 访问密钥 ID
@@ -118,7 +119,7 @@ desc: "文章摘要"    # 可选
 
 #### 高级配置
 - 同步脚本：`.github/workflows/notion2md.js`
-- 定时任务：`.github/workflows/task.yml`
+- Action任务：`.github/workflows/task.yml`
 - 参考文档：[notion2md 使用指南](https://github.com/thinkerchan/notion2md)
 
 
