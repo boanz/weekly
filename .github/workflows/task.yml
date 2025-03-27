@@ -33,6 +33,7 @@ jobs:
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
           OSS_BUCKET: ${{ secrets.OSS_BUCKET }}
           OSS_REGION: ${{ secrets.OSS_REGION }}
+          OSS_DOMAIN: ${{ secrets.OSS_DOMAIN }}
         run: node .github/workflows/notion2md.js
 
       - name: Commit and push if there are changes

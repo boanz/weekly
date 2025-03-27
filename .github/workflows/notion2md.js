@@ -5,6 +5,7 @@ import path from 'path';
 import dotEnv from 'dotenv'
 import OSS from 'ali-oss';
 import https from 'https';
+import crypto from 'crypto';
 
 if (!process.env.GITHUB_ACTIONS) {
     dotEnv.config();
@@ -42,23 +43,44 @@ function downloadImage(url) {
     });
 }
 
-// 上传图片到 OSS
-async function uploadToOSS(imageBuffer, fileName) {
+// 添加 MD5 哈希函数
+function generateMD5(buffer) {
+    return crypto.createHash('md5').update(buffer).digest('hex');
+}
+
+// 修改上传到 OSS 的函数
+async function uploadToOSS(imageBuffer, originalFileName) {
     try {
-        const result = await ossClient.put(fileName, imageBuffer);
-        return result.url;
+        // 生成图片的 MD5 值
+        const md5Hash = generateMD5(imageBuffer);
+        const fileExtension = path.extname(originalFileName) || '.jpg';
+        const fileName = `images/${md5Hash}${fileExtension}`;
+
+        // 检查文件是否已存在
+        try {
+            await ossClient.head(fileName);
+            console.log(`File ${fileName} already exists, skipping upload`);
+            return `${process.env.OSS_DOMAIN}/${fileName}`; // 返回完整的URL
+        } catch (error) {
+            if (error.code === 'NoSuchKey') {
+                // 文件不存在，执行上传
+                const result = await ossClient.put(fileName, imageBuffer);
+                return result.url;
+            }
+            throw error;
+        }
     } catch (error) {
         console.error('Error uploading to OSS:', error);
         throw error;
     }
 }
 
-// 处理微信图片
+// 修改处理微信图片的函数
 async function processWeChatImage(url) {
     try {
         const imageBuffer = await downloadImage(url);
-        const fileName = `images/${Date.now()}-${Math.random().toString(36).substring(7)}.jpg`;
-        const ossUrl = await uploadToOSS(imageBuffer, fileName);
+        const originalFileName = url.split('/').pop() || 'image.jpg';
+        const ossUrl = await uploadToOSS(imageBuffer, originalFileName);
         return ossUrl;
     } catch (error) {
         console.error('Error processing WeChat image:', error);
