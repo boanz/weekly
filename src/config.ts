@@ -6,7 +6,7 @@ export const SITE = {
     "keywords": "weekly",
     "icon": "https://picture-uploader.oss-cn-guangzhou.aliyuncs.com/md/weekly.png",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg",
-    "pic": "",
+    "pic": "https://picture-uploader.oss-cn-guangzhou.aliyuncs.com/md/image_not_found.png",
     "homePage": "https://post.daychat.cn",
     // "blogPage": "https://blog.daychat.cn",
     // "twitterId": "thinkerchan",

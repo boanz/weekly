@@ -30,6 +30,7 @@
     "@docsearch/react": "^3.2.1",
     "@pagefind/default-ui": "^1.1.0",
     "@tailwindcss/line-clamp": "^0.4.2",
+    "ali-oss": "^6.22.0",
     "astro": "^1.4.7",
     "dayjs": "^1.11.5",
     "lozad": "^1.16.0",
@@ -46,7 +47,7 @@
     "@notionhq/client": "^2.3.0",
     "@tailwindcss/typography": "^0.5.7",
     "@types/lozad": "^1.16.1",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "moment": "^2.30.1"
   }
 }
